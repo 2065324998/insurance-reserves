@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "insurance-reserves"
+version = "0.1.0"
+description = "IBNR reserve estimation using chain-ladder and Bornhuetter-Ferguson methods"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
