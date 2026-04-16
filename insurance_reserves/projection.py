@@ -4,15 +4,10 @@ from .models import LossTriangle, DevelopmentFactors
 
 
 def compute_cdfs(dev_factors: DevelopmentFactors) -> list[float]:
-    """Compute cumulative development factors to ultimate.
+    """Build cumulative development factors from link ratios.
 
-    Returns a list with one CDF per development period position.
-    CDF[k] represents the total remaining development from development
-    period k to ultimate (including the tail factor).
-
-    CDF at the last position equals the tail factor (only tail
-    development remains). Earlier positions accumulate subsequent
-    factors backward.
+    Each CDF entry represents the cumulative product of development
+    factors, incorporating the tail factor at the final position.
     """
     n = len(dev_factors.factors)
     cdfs = [1.0] * (n + 1)
